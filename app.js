@@ -7,13 +7,45 @@ let server = require("http").createServer(app);
 let io = require("socket.io")(server);
 let port = process.env.PORT || 2000;
 
-server.listen(port, () => {
+server.listen(port, function () {
     console.log(`server listening on localhost:${port}`);
 });
 
-io.on("connection", (client) => {
+io.on("connection", function (client) {
     console.log('a new user connected');
-    client.on('disconnect', () => { 
+
+    //initial stage
+    client.emit('message', {
+        from: 'admin',
+        text: 'Welcome, cyberpunker...',
+        createdAt: new Date().getTime()
+    });
+
+    //everyone except the user get the msg,"someone entered"
+    client.broadcast.emit('message', {
+        from: 'admin',
+        text: 'New existence joined',
+        createdAt: new Date().getTime()
+    });
+
+    client.on('createMessage', (msg) => {
+        console.log('createMessage', msg);
+        // broadcast to everyone
+        io.emit('message', {
+            from: msg.from,
+            text: msg.text,
+            createdAt: new Date().getTime()
+        });
+
+        // //sending to all clients except sender
+        // client.broadcast.emit('message', {
+        //     from: msg.from,
+        //     text: msg.text,
+        //     createdAt: new Date().getTime()
+        // });
+    });
+
+    client.on('disconnect', () => {
         console.log('an user disconnected...');
     });
 });
