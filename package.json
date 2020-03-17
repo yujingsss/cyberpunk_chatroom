@@ -1,0 +1,29 @@
+{
+  "name": "cyberpunkchatroom",
+  "version": "1.0.0",
+  "description": "this is for cyberpunk chatroom",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "13.11.0"
+  },
+  "keywords": [
+    "cyberpunk",
+    "dystopia",
+    "films",
+    "futuristic",
+    "blade runner",
+    "ghost in the shell",
+    "science fiction",
+    "chatroom",
+    "artificial intelligence"
+  ],
+  "author": "Yujing Shi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

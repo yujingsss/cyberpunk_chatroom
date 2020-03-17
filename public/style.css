@@ -1,0 +1,44 @@
+/* @import url('https://fonts.googleapis.com/css?family=Fira+Code:300,400,500,600,700&display=swap'); */
+body {
+    margin: 0;
+    background-color: black;
+    /* font-family: 'Fira Code', monospace; */
+}
+/* center everything */
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* https://www.youtube.com/watch?v=BDO_xNCw6wU */
+@font-face {
+    font-family: neon;
+    src: url(polentical-neon.regular.ttf);
+}  
+.neon-wrapper {
+    box-shadow:
+    0 0 0.1vw  0.4vw #bec4fd,   
+    0 0 0.4vw  0.6vw #578df2, 
+    0 0   4vw  0.4vw #1a0be5,
+    inset 0 0 1.5vw  0.4vw #1a0be5,
+    inset 0 0 0.4vw  0.2vw #578df2,
+    inset 0 0 0.5vw  0.2vw #bec4fd;
+    border-radius: 5%;
+}
+.neon-text{
+    padding: 10%;
+    font-family: neon;
+    color: #bec4fd;
+    font-size: 30px;
+    text-shadow:   
+    .05vw 0vw .1vw #d4d8ff, .1vw 0vw .1vw #d4d8ff, .1vw 0vw .1vw #d4d8ff, 
+    .1vw 0vw   0vw #578df2, .1vw 0vw   0vw #578df2, .2vw 0vw   0vw #578df2,
+    .1vw 0vw  .1vw #578df2, .1vw 0vw  .1vw #578df2, .2vw 0vw  .1vw #578df2,
+    .1vw 0vw   2vw #578df2, .1vw 0vw   2vw #578df2, .2vw 0vw   2vw #578df2, 
+    .1vw 0vw   1vw #1a0be5, .1vw 0vw   1vw #1a0be5, .2vw 0vw   2vw #1a0be5, 
+    .1vw 0vw   5vw #1a0be5, .1vw 0vw  16vw #1a0be5, .2vw 0vw  8vw #1a0be5,
+    .1vw 0vw  10vw #1a0be5, .1vw 0vw  18vw #1a0be5, .2vw 0vw  8vw #1a0be5;
+}
