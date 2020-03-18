@@ -9,32 +9,42 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div id="enter"></div>
-            <!-- *What sort of meeting space would they want?*
-            <br>futuristic, dystopia, sci-fi.
+    <div class="wrapper" id="intropage">
+        <!-- message display -->
+        <div id="typing" style="margin:20px; width:25%; max-height:300px; padding:10px;"></div>
+        <!-- username input -->
+        <div id="username" style="margin:20px; padding: 10px; width:25%;">
+            <input type="text" id="password" placeholder="identity?">
             <br>
-            *What features might their chatroom need?*
-            <br>choose a film theme, blader runner/ghost in the shell;
-            red, blue, green, purple neon lights
-            <br>
-            *How would you find out and learn about this subculture?*
-            <br>films, visuals -->
-        <div class="neon-wrapper">
+            <input type="text" name="nickname" placeholder="nickname">
+        </div>
+
+        <div id="neontext" class="neon-wrapper" style="margin:20px; width:25%;">
             <div class="neon-text">
-                Hello, cyberpunkers...
+                Hello,<br>replicant . . .
             </div>
         </div>
     </div>
-    <!-- username input -->
-
-
-    <!-- chatroom -->
-
-
+    <div class="wrapper" id="chatroom">
+        <!-- chatroom -->
+        <div id="sidebar" style="margin:20px; width:25%; padding:20px; max-height:200px; text-align:center;">
+            <p style="color:rgba(0,255,0,20);">Online Replicants</p>
+            <p id="allusers"></p>
+        </div>
+        <div id="chatbox" style="margin:50px; width:35%; height:500px; padding:20px;"></div>
+        <form id="chatroom-form" style="margin:10px; padding:20px; width:25%; padding:20px;">
+            <p id="yourname"></p>
+            <input type="text" name="messagecontent" placeholder="Typing...">
+            <button id="submitmessage" type="submit" style="margin:20px;">Enter</button>
+            <br>
+            <button id="send-location">Send Location</button>
+        </form>
+    </div>
 </body>
+
 <!-- create script in html to access this library -->
 <script src="/socket.io/socket.io.js"></script>
 <script src="/main.js"></script>
+<script src="/libs/moment.js"></script>
 
 </html>
