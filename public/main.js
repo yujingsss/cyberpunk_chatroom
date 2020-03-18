@@ -113,7 +113,7 @@ document.querySelector('#send-location').addEventListener('click', function () {
         return alert('You are at Nowhere');
     }
     navigator.geolocation.getCurrentPosition(function (position) {
-        // console.log(position);
+        console.log(position);
         socket.emit('createLocationMessage', {
             from: username,
             lat: position.coords.latitude,
