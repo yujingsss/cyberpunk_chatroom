@@ -44,7 +44,7 @@ socket.on('newMessage', function (msg) {
 //available users
 socket.on('availableusers', function (data) {
     // console.log(data);
-    document.getElementById('allusers').innerText = data;
+    document.getElementById('allusers').innerText = data.join(`\n`);
 });
 
 //socket.emit(argument1, argument2, callback);
