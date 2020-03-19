@@ -19,7 +19,7 @@ socket.on('introgreeting', function (msg) {
     // console.log('introgreeting', msg);
     let clientname = document.createElement('li');
     clientname.innerText = `${msg.from}, ${formatTime}:\n`;
-    clientname.style.color = "rgba(0, 255, 0, 20)";
+    clientname.style.color = "rgba(0, 255, 0, 0.8)";
     clientname.style.listStyle = "none";
     let li = document.createElement('li');
     li.style.listStyle = "none";
@@ -31,7 +31,7 @@ socket.on('newMessage', function (msg) {
     // console.log('newMessage', msg);
     let chatcontent = document.createElement('li');
     chatcontent.innerText = `${msg.from}, ${formatTime}:\n`;
-    chatcontent.style.color = "rgba(0, 255, 0, 10)";
+    chatcontent.style.color = "rgba(0, 255, 0, 0.8)";
     chatcontent.style.listStyle = "none";
     chatcontent.style.fontSize="13px";
     let li = document.createElement('li');
@@ -129,7 +129,7 @@ socket.on('newLocationMessage', function (msg) {
     const formatTime = moment(msg.createdAt).format('lll');
     let chatcontent = document.createElement('li');
     chatcontent.innerText = `${msg.from}, ${formatTime}:\n`;
-    chatcontent.style.color = "rgba(0, 255, 0, 20)";
+    chatcontent.style.color = "rgba(0, 255, 0, 0.8)";
     chatcontent.style.listStyle = "none";
     let li = document.createElement('li');
     let a = document.createElement('a');
