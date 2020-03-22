@@ -98,12 +98,19 @@ function enterchatroom() {
 document.querySelector('#submitmessage').addEventListener('click', function (event) {
     let messagecontent = document.getElementsByName("messagecontent")[0].value;
     let username = document.getElementsByName("nickname")[0].value;
+    let textnotes = document.querySelector('#notextcontent');
     event.preventDefault();
-    socket.emit('createMessage', {
-        from: username,
-        text: messagecontent
-    }, function (msg) { console.log(msg + "send messages"); });
-    document.getElementsByName("messagecontent")[0].value = '';
+    if (messagecontent === '') {
+        // console.log('no text');
+        textnotes.innerText = 'please enter your message';
+    } else {
+        textnotes.innerText = '';
+        socket.emit('createMessage', {
+            from: username,
+            text: messagecontent
+        }, function (msg) { console.log(msg + "send messages"); });
+        document.getElementsByName("messagecontent")[0].value = '';
+    }
 });
 
 document.querySelector('#send-location').addEventListener('click', function () {
